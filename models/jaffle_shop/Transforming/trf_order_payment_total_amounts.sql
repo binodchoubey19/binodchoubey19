@@ -11,6 +11,5 @@ sum(amount) as total_amount
 from {{ ref('stg_payment') }}
 group by 1
 
-select Id as payment_id,
-{{ cents_to_dollars(amount)}} as amount_usd
+select Id as payment_id
 from {{ ref('stg_payment') }}
